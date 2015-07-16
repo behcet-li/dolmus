@@ -20,3 +20,18 @@ exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 gems: [jekyll-paginate, jekyll-feed]
 # Serve settings
 host: 0.0.0.0
+
+# jekyll-assets
+assets:
+  dirname: assets
+  baseurl: /assets/
+  sources:
+    - _assets/img
+    - _assets/js
+    - _assets/scss
+  jscompressor: uglifier
+  css_compressor: ~
+  autosize: false
+  cachebust: hard
+  cache: false
+  gzip: [ text/css, application/javascript ]

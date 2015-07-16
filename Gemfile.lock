@@ -100,8 +100,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass
-  jekyll-assets
+  bootstrap-sass!
+  jekyll-assets!
 
 BUNDLED WITH
    1.10.5

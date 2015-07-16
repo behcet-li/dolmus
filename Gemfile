@@ -5,5 +5,7 @@ group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll"
 end
-gem 'jekyll-assets'
-gem 'bootstrap-sass'
+source 'https://rubygems.org' do
+  gem 'jekyll-assets'
+  gem 'bootstrap-sass'
+end

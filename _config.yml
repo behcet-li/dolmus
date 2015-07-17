@@ -24,9 +24,9 @@ host: 0.0.0.0
 # App specific
 social:
   - title: github
-    url: https://github.com/IronSummitMedia/startbootstrap
+    url: https://github.com/behcet-li
   - title: linkedin
-    url:
+    url: https://www.linkedin.com/pub/behcet-uyar/4b/457/661
 
 # jekyll-assets
 assets:

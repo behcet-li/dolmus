@@ -21,6 +21,13 @@ gems: [jekyll-paginate, jekyll-feed]
 # Serve settings
 host: 0.0.0.0
 
+# App specific
+social:
+  - title: github
+    url: https://github.com/IronSummitMedia/startbootstrap
+  - title: linkedin
+    url:
+
 # jekyll-assets
 assets:
   dirname: assets

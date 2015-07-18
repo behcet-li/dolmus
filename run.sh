@@ -10,5 +10,5 @@ function run {
   return $status
 }
 
-run bundle install
+run bundle install --path _vendor/bundle
 run jekyll build

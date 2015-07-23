@@ -12,3 +12,4 @@ function run {
 
 run bundle install --path _vendor/bundle
 run jekyll build
+grunt

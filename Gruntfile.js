@@ -43,14 +43,17 @@ module.exports = function (grunt) {
           banner: '<%= banner %>'
         },
         files: {
-          src: ['css/<%= pkg.name %>.css', 'css/<%= pkg.name %>.min.css', 'js/<%= pkg.name %>.min.js']
+          src: [
+            '_site/assets/**.css',
+            '_site/assets/**.js'
+          ]
         }
       }
     },
     watch: {
       scripts: {
         files: ['_site/img/**.jpg'],
-        tasks: ['imagemin'],
+        tasks: ['default'],
         options: {
           spawn: false,
         },
@@ -59,7 +62,6 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-imagemin');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-banner');
   grunt.loadNpmTasks('grunt-contrib-watch');
 

@@ -4,7 +4,7 @@ header-img: img/kadikoy.jpg
 description: "A site not really about dolmus"
 baseurl: ""
 url: "http://dolm.us"
-github_username:  behcet-li
+github_username:  behcet
 timezone: America/New_York
 
 # Build settings
@@ -24,7 +24,7 @@ host: 0.0.0.0
 # App specific
 social:
   - title: github
-    url: https://github.com/behcet-li
+    url: https://github.com/behcet
   - title: linkedin
     url: https://www.linkedin.com/pub/behcet-uyar/4b/457/661
 

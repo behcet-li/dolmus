@@ -2,6 +2,7 @@
 
 module.exports = function (grunt) {
   grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
     imagemin: {
       png: {
         options: {
@@ -48,24 +49,19 @@ module.exports = function (grunt) {
     },
     watch: {
       scripts: {
-        files: ['js/<%= pkg.name %>.js'],
-        tasks: ['uglify'],
+        files: ['_site/img/**.jpg'],
+        tasks: ['imagemin'],
         options: {
           spawn: false,
         },
-      },
-      less: {
-        files: ['less/*.less'],
-        tasks: ['less'],
-        options: {
-          spawn: false,
-        }
       },
     },
   });
 
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-banner');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('img', ['imagemin']);
-  grunt.registerTask('default', ['img']);
+  grunt.registerTask('default', ['imagemin', 'usebanner']);
 };

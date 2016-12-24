@@ -20,10 +20,9 @@
   },
   "homepage": "https://github.com/behcet/dolmus",
   "dependencies": {
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-banner": "~0.2.3",
-    "grunt-contrib-uglify": "~0.5.1",
     "grunt": "^1.0.1",
-    "grunt-contrib-imagemin": "^1.0.1"
+    "grunt-banner": "^0.6.0",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0"
   }
 }

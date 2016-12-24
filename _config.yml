@@ -15,9 +15,19 @@ highlighter: rouge
 permalink: pretty
 paginate: 5
 paginate_path: "blog/page:num"
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md", "vendor"]
+exclude: [
+  "node_modules",
+  "Gruntfile.js",
+  "package.json",
+  "README.md",
+  "vendor",
+  "Gemfile",
+  "deploy.conf",
+  "deploy.sh",
+  "build.sh"
+]
 
-gems: [jekyll-paginate, jekyll-feed]
+gems: [jekyll-assets, jekyll-paginate, jekyll-feed, bootstrap-sass, uglifier]
 # Serve settings
 host: 0.0.0.0
 
@@ -36,9 +46,8 @@ assets:
     - _assets/img
     - _assets/js
     - _assets/scss
-  jscompressor: uglifier
-  css_compressor: ~
-  autosize: false
-  cachebust: hard
-  cache: false
-  gzip: [ text/css, application/javascript ]
+  compress:
+    js: true
+    css: true
+  digest: true
+  cache: .asset-cache

@@ -19,6 +19,8 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 gempath=${DIR}/_vendor/bundle
 
+rm -rf ${DIR}/_site || true
+
 bundle install --path ${gempath}
 # find latest
 rubyversion=$(ls -LA ${gempath}/ruby | sort -t "." -n -k1,1 -k2,2 -k3,3 -k4,4 | tail -n 1)

@@ -1,14 +1,31 @@
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+<header class="intro-header">
+  <div class="hero-image">
+    {% if page.header-img != null %}
+      {% assign image = page.header-img %}
+    {% else %}
+      {% assign image = site.header-img %}
+    {% endif %}
+    {% capture imagepath  %}{{ image | asset_path }}{% endcapture %}
+    <img src="{{ imagepath }}">
+  </div>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="site-heading">
-          <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+      <div class="{% if page.author == null %}site-heading{% else %}post-heading{% endif %}">
+          <h1>{{ page.title or site.title }}</h1>
+          {% if page.author == null %}
           <hr class="small">
+          {% endif %}
+          {% if page.subtitle %}
+          <h2 class="subheading">{{ page.subtitle }}</h2>
+          {% elsif page.description %}
           <span class="subheading">{{ page.description }}</span>
+          {% endif %}
+          {% if page.author != null %}
+          <span class="meta">Posted by {{ page.author }} on {{ page.date | date: "%B %-d, %Y" }}</span>
+          {% endif %}
         </div>
       </div>
     </div>
   </div>
 </header>
-

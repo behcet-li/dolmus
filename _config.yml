@@ -23,10 +23,19 @@ exclude: [
   "Gemfile",
   "deploy.conf",
   "deploy.sh",
-  "build.sh"
+  "build.sh",
+  "assets"
 ]
 
-gems: [jekyll-assets, jekyll-paginate, jekyll-feed, bootstrap-sass, uglifier]
+gems: [
+  jekyll-assets,
+  jekyll-paginate,
+  jekyll-feed,
+  bootstrap-sass,
+  uglifier,
+  jekyll/responsive_image
+]
+
 # Serve settings
 host: 0.0.0.0
 
@@ -56,38 +65,12 @@ assets:
 
 # jekyll-responsive-image
 responsive_image:
-  # [Required]
-  # Path to the image template.
   template: _includes/responsive-image.html
-
-  # [Optional, Default: 85]
-  # Quality to use when resizing images.
-  default_quality: 90
-
-  # [Optional, Default: []]
-  # An array of resize configuration objects. Each object must contain at least
-  # a `width` value.
+  default_quality: 100
   sizes:
-    - width: 480  # [Required] How wide the resized image will be.
-      quality: 80 # [Optional] Overrides default_quality for this size.
+    - width: 20
+    - width: 480
     - width: 800
     - width: 1400
-
-  # [Optional, Default: assets]
-  # The base directory where assets are stored. This is used to determine the
-  # `dirname` value in `output_path_format` below.
-  base_path: _assets/image
-
-  # [Optional, Default: assets/resized/%{filename}-%{width}x%{height}.%{extension}]
-  # The template used when generating filenames for resized images. Must be a
-  # relative path.
-  #
-  # Parameters available are:
-  #   %{dirname}     Directory of the file relative to `base_path` (assets/sub/dir/some-file.jpg => sub/dir)
-  #   %{basename}    Basename of the file (assets/some-file.jpg => some-file.jpg)
-  #   %{filename}    Basename without the extension (assets/some-file.jpg => some-file)
-  #   %{extension}   Extension of the file (assets/some-file.jpg => jpg)
-  #   %{width}       Width of the resized image
-  #   %{height}      Height of the resized image
-  #
-  output_path_format: assets/resized/%{width}/%{basename}
+    - width: 2800
+  output_path_format: assets/images/%{filename}-%{width}.%{extension}

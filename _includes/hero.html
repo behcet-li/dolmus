@@ -5,8 +5,10 @@
     {% else %}
       {% assign image = site.header-img %}
     {% endif %}
-    {% capture imagepath  %}{{ image | asset_path }}{% endcapture %}
-    <img src="{{ imagepath }}">
+    {% responsive_image_block %}
+      path: {{ assets[image].filename }}
+      alt: {{ assets[image].logical_path }}
+    {% endresponsive_image_block %}
   </div>
   <div class="container">
     <div class="row">

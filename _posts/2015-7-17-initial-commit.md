@@ -3,7 +3,7 @@ layout:     post
 title:      "Initial commit"
 date:       2015-07-17 12:00:00
 author:     "Behcet"
-header-img: "img/post-initial-commit.jpg"
+header-img: "post-initial-commit.jpg"
 category:   blog
 ---
 

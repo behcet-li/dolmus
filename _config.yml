@@ -20,7 +20,6 @@ exclude: [
   "Gruntfile.js",
   "package.json",
   "README.md",
-  "vendor",
   "Gemfile",
   "deploy.conf",
   "deploy.sh",

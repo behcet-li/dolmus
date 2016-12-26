@@ -5,10 +5,9 @@
                 <ul class="list-inline text-center">
                     <li>
                         <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                            </span>
+                          <span class="social">
+                            {% include svg/rss.svg %}
+                          </span>
                         </a>
                     </li>
                     {% if site.twitter_username %}
@@ -34,10 +33,9 @@
                     {% if site.github_username %}
                     <li>
                         <a href="https://github.com/{{ site.github_username }}">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
+                          <span class="social">
+                            {% include svg/github.svg %}
+                          </span>
                         </a>
                     </li>
                     {% endif %}

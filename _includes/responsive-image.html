@@ -7,7 +7,7 @@
 
 <img
   src="/{{ smallest.path }}"
-  alt="{{ alt }}"
+  {% if alt %}alt="{{ alt }}"{% endif %}
   srcset="{{ srcset | strip_newlines }}"
   class="img-responsive hero"
 >

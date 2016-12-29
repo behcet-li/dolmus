@@ -2,6 +2,10 @@
 
 set -ex
 
+(rvm && rvm use $(cat .ruby-version) --install) || true
+
+(nvm && nvm install $(cat .node-version)) || true
+
 ruby --version
 bundle --version
 npm --version
@@ -17,14 +21,11 @@ while [ -h "$SOURCE" ]; do
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
-gempath=${DIR}/_vendor/bundle
-
 rm -rf ${DIR}/_site || true
 
+gempath=${DIR}/_vendor/bundle
 bundle install --path ${gempath}
-# find latest
-rubyversion=$(ls -LA ${gempath}/ruby | sort -t "." -n -k1,1 -k2,2 -k3,3 -k4,4 | tail -n 1)
-GEM_PATH=${gempath}/ruby/${rubyversion} ${gempath}/ruby/${rubyversion}/bin/jekyll build
+JEKYLL_ENV=production bundle exec jekyll build
 npm install ${DIR}
 # this way I don't have to depend on grunt-cli
 node -e "require('grunt').tasks(['default'], { verbose: true })"

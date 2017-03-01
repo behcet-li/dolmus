@@ -21,7 +21,7 @@ while [ -h "$SOURCE" ]; do
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
-rm -rf ${DIR}/_site || true
+rm -rf ${DIR}/_site ${DIR}/assets || true
 
 gempath=${DIR}/_vendor/bundle
 bundle install --path ${gempath}

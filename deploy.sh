@@ -2,7 +2,7 @@
 
 set -ex
 
-host=deployer@dolm.us
+host=deployer@${DEPLOY_SERVER:-dolm.us}
 deploysign=$(date +%m-%d-%y-%H_%M)
 target=/home/deployer/dolmus/$deploysign
 

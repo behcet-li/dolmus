@@ -1,33 +1,26 @@
 'use strict';
 
+const imageminJpegRecompress = require('imagemin-jpeg-recompress');
+
 module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     imagemin: {
-      png: {
+      imgs: {
         options: {
-          optimizationLevel: 7
-        },
-        files: [{
-          // Set to true to enable the following options…
-          expand: true,
-          cwd: '_site/img/',
-          src: ['**/*.png'],
-          dest: '_site/img/',
-          ext: '.png'
-        }]
-      },
-      jpg: {
-        options: {
-          progressive: true
+          use: [
+            imageminJpegRecompress({
+              method: 'ms-ssim',
+              quality: 'veryhigh'
+            })
+          ]
         },
         files: [{
           // Set to true to enable the following options…
           expand: true,
           cwd: '_site/',
-          src: ['**/*.jpg'],
-          dest: '_site/',
-          ext: '.jpg'
+          src: ['**/*.{jpg,png,gif,svg}'],
+          dest: '_site/'
         }]
       },
     },

@@ -2,7 +2,6 @@ _site
 node_modules
 .sass-cache
 .bundle
-_vendor
 .asset-cache
 .jekyll-metadata
 assets

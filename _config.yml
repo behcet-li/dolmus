@@ -36,6 +36,8 @@ gems: [
   jekyll/responsive_image
 ]
 
+source: site/
+
 # Serve settings
 host: 0.0.0.0
 

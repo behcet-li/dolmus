@@ -21,9 +21,9 @@ while [ -h "$SOURCE" ]; do
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
-rm -rf ${DIR}/_site ${DIR}/assets || true
+rm -rf ${DIR}/_site ${DIR}/site/assets || true
 
-gempath=${DIR}/_vendor/bundle
+gempath=${DIR}/.bundle/vendor
 bundle install --path ${gempath}
 JEKYLL_ENV=production bundle exec jekyll build
 npm install ${DIR}

@@ -17,12 +17,21 @@
 
 .hero {
   min-height: 100%;
-  min-width: 100%
+  min-width: 100%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) perspective(1px);
+  max-width: none;
+}
+
+.site-heading {
+  text-shadow: 2px 1px 0px #000;
 }
 
 .intro-header {
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 25%;
   position: relative;
 }
 

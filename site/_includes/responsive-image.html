@@ -4,10 +4,11 @@
     {% endfor %}
 {% endcapture %}
 {% assign smallest = resized | sort: 'width' | first %}
+{% capture class %}{{ "img-responsive" | append: ' ' | append: class | strip_newlines | rstrip }}{% endcapture %}
 
 <img
   src="/{{ smallest.path }}"
   {% if alt %}alt="{{ alt }}"{% endif %}
   srcset="{{ srcset | strip_newlines }}"
-  class="img-responsive hero"
+  class="{{ class }}"
 >

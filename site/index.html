@@ -22,7 +22,10 @@ description: "as a service"
           </div>
         </div>
         <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-          <img class="img-responsive" src="{% asset_path saygilarabi.jpg %}">
+          {% responsive_image_block %}
+            path: {{ assets["saygilarabi.jpg"].filename }}
+            alt: {{ assets["saygilarabi.jpg"].logical_path }}
+          {% endresponsive_image_block %}
         </div>
       </div>
     </div>
@@ -44,7 +47,10 @@ description: "as a service"
           </div>
       </div>
         <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-          <img class="img-responsive" src="{% asset_path beykoz.jpg %}">
+          {% responsive_image_block %}
+            path: {{ assets["beykoz.jpg"].filename }}
+            alt: {{ assets["beykoz.jpg"].logical_path }}
+          {% endresponsive_image_block %}
         </div>
       </div>
     </div>
@@ -70,7 +76,10 @@ description: "as a service"
           </div>
         </div>
         <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-          <img class="img-responsive" src="{% asset_path side.jpg %}">
+          {% responsive_image_block %}
+            path: {{ assets["side.jpg"].filename }}
+            alt: {{ assets["side.jpg"].logical_path }}
+          {% endresponsive_image_block %}
         </div>
       </div>
     </div>
